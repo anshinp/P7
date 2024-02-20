@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+            var a = parseInt(prompt("Enter the value of a"));
+        var b = parseInt(prompt("Enter the value of b"));
+        var c = parseInt(prompt("Enter the value of c"));
+
+        var discriminant = (b * b) - (4 * a * c);
+
+        switch (true) {
+            case discriminant > 0:
+                var root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                var root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                document.write("Two distinct and real roots exist: " + root1 + " and " + root2);
+                break;
+
+            case discriminant < 0:
+                var root1 = root2 = -b / (2 * a);
+                var imaginary = Math.sqrt(-discriminant) / (2 * a);
+                document.write("Two distinct complex roots exist: " + root1 + " + i" + imaginary + " and " + root2 + " - i" + imaginary);
+                break;
+
+            case discriminant == 0:
+                var root1 = root2 = -b / (2 * a);
+                document.write("Two equal and real roots exist: " + root1 + " and " + root2);
+                break;
+
+            default:
+                document.write("Invalid input or no real roots exist.");
+        }
+
+    </script>
+</body>
+
+</html>
